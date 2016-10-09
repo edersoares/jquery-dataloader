@@ -55,4 +55,18 @@
         });
     };
 
+    $.fn.selectloader = function(object){
+
+        var data = $.extend({}, object);
+
+        return this.each(function(){
+
+            $(this).html('');
+
+            for (var val in data)
+                $(this).append($('<option>', { value: val }).text(data[val]));
+
+        });
+    };
+
 }(jQuery));
